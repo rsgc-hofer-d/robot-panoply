@@ -19,10 +19,10 @@ int counter = 0;
 while (counter<3) {
   //draw the robot
   print(50+100*counter);
-  benbot.drawAt(250 + 150*counter,100+10*counter,.5-.05*counter,.5-.05*counter);
+  benbot.drawAt(250 + 150*counter,50+10*counter,.5-.05*counter,.5-.05*counter);
   //draw john mclcaine
   timbot.drawAt(100,450,1,1);
-  
+  ethanbot.drawAt(250,375,.65,.65);
   
   counter +=1;
 }
