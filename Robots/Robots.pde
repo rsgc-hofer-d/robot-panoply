@@ -7,7 +7,7 @@ void setup() {
 }
 void draw() {
 
-  background(0);
+  background(60);
 
   //make all of the classes into usuable robots
   ASPRobot adambot = new ASPRobot();
@@ -39,12 +39,12 @@ void draw() {
       fill(255);
       //make john's text bubble
       ellipse(250, 400, 200, 60);
-       //make Holly Generos Text Bubble
-      ellipse(600,400,150,60);
+      //make Holly Generos Text Bubble
+      ellipse(600, 400, 150, 60);
       fill(0);
       text(j, 175, 410);
-     text(h,575,410);
-     
+      text(h, 575, 410);
+
       benbot.drawAt(100 + 150*counter, 50+10*counter, .5-.05*counter, .5-.05*counter);
 
       benbot.drawAt(700, 50+250*counter, .5-.05*counter, .5-.05*counter);
@@ -58,7 +58,41 @@ void draw() {
   }
 
   if (scene==2) {
-    adambot.drawAt(100, 100, .75, .75);
+    //draw all the main charachters in order: Gruber, Holly, John, Karl
+    kernbot.drawAt(0, 385, .75, .75);
+    ethanbot.drawAt(250, 425, .5, .5);
+    timbot.drawAt(800, 300, 1, 1);
+    adambot.drawAt(30, 30, .5, .5);
+//draw create the textboxes
+fill(255);
+ellipse(350,60,280,100);
+ellipse(200,400,200,60);
+ellipse(750,200,200,50);
+
+
+//the text
+String k = "You killed my brother! I will avenge him!";
+fill(0);
+text(k,240,60);
+String w = "I have you wife Mr.McClane";
+text(w,125,400);
+String b ="I'll get you Hanz!!!";
+text(b,700,210);
+String p = "The terrorists have attacked the building John is the only man not captured.";
+String q = "He will do whatever it takes to get his wife back!";
+fill(#05E8FF);
+text(p,525,650);
+text(q, 525,670);
+
+
+    //create a wall between john and the rest of the people in the scene showing how john is somewhere else in the building
+   fill(255);
+    rect(500, 0, 10, 700);
+  }
+  if (scene == 3) {
+  timbot.drawAt(100,100,1,1); 
+  
+  
   }
 }
 void keyPressed() {
