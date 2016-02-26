@@ -2,6 +2,7 @@ int scene = 3;
 
 void setup() {
 
+
   //create the canvas
   size(1000, 700);
 }
