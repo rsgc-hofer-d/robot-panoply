@@ -26,6 +26,7 @@ void draw() {
   //start of scene 1
   if (scene==1) {
     int x = 50;
+    //all the text strings for this scene
     String s = "John meets his wife in the Nakatomi tower. He hasn't seen his wife ever since they moved apart from eachother, because of work." ;
     String r = "It is christmas time and there is a small party in the Nakatomi tower. John McClane has no idea what is in store for him!";
     String j = "Hi Holly! Merry Christmas!";
@@ -61,14 +62,14 @@ void draw() {
   }
   //start of scene 2
   if (scene==2) {
-    //draw all the main charachters in order: Gruber, Holly, John, Karl, Citizens
+    //draw all the  charachters in order: Gruber, Holly, John, Karl, Citizens
     kernbot.drawAt(0, 385, .75, .75);
     ethanbot.drawAt(250, 425, .5, .5);
     timbot.drawAt(800, 300, 1, 1);
     adambot.drawAt(30, 30, .5, .5);
     benbot.drawAt(-30, 450, .3, .3);
 
-    //draw create the textboxes
+    //draw the textboxes
     fill(255);
     ellipse(350, 60, 280, 100);
     ellipse(200, 400, 200, 60);
@@ -109,10 +110,10 @@ void draw() {
       //draw the text bubbles, for johns , johns wife and the police
       fill(255);
       ellipse(900, 400, 200, 70);
-      ellipse(675,420,200,70);
-      ellipse(475,600,200,70);
+      ellipse(675, 420, 200, 70);
+      ellipse(475, 600, 200, 70);
       //resets text size because of last textSize in danbot
-textSize(12);
+      textSize(12);
       //text for John, Johns wife and the LAPD
       String v = "Another normal day";
       String o = "John, my savior! I love you!";
@@ -120,18 +121,15 @@ textSize(12);
       String l = "John defeats the terrorists, saves his wife and";
       String k = "all the other hostages. John and Holly live";
       String m = "happily ever after until their next adventure...";
-      
-    
-      
-      
+
       fill(0);
       text(v, 840, 400);
-      text(o,605,420);
-      text(t,410,600);
+      text(o, 605, 420);
+      text(t, 410, 600);
       fill(#05E8FF);
-      text(l,x,350);
-      text(k,x,365);
-      text(m,x,380);
+      text(l, x, 350);
+      text(k, x, 365);
+      text(m, x, 380);
       loop+=1;
     }
   }
