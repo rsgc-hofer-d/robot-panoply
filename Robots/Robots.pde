@@ -1,4 +1,4 @@
-int scene = 3;
+int scene = 1;
 
 void setup() {
 
@@ -54,6 +54,7 @@ void draw() {
       timbot.drawAt(100, 450, 1, 1);
       //draw johns wife
       ethanbot.drawAt(250, 375, .65, .65);
+      fill(100);
       jamiebot.drawAt(25, 100, 1, 1);
       counter +=1;
     }
@@ -96,21 +97,41 @@ void draw() {
   //start of scene 3
   if (scene == 3) {
     int loop = 0;
+    //use int x to move the all 3 lines of text to summarize the scene
+    int x= 5;
     while (loop<3) {
       //draw the charachters in order John, Wife, Police and Civilians
       timbot.drawAt(800, 450, 1, 1); 
       ethanbot.drawAt(550, 450, .55, .55);
       danielbot.drawAt(100+150*loop, 450-200*loop, .5, .5);
-      benbot.drawAt(700,0,.5,.5);
-      benbot.drawAt(50,0,.5,.5);
+      benbot.drawAt(700, 0, .5, .5);
+      benbot.drawAt(50, 0, .5, .5);
       //draw the text bubbles, for johns , johns wife and the police
       fill(255);
-      ellipse(900,400,200,70);
-      
-      //text for John, Johns wife and the police
+      ellipse(900, 400, 200, 70);
+      ellipse(675,420,200,70);
+      ellipse(475,600,200,70);
+      //resets text size because of last textSize in danbot
+textSize(12);
+      //text for John, Johns wife and the LAPD
       String v = "Another normal day";
+      String o = "John, my savior! I love you!";
+      String t = "Is everyone all right?";
+      String l = "John defeats the terrorists, saves his wife and";
+      String k = "all the other hostages. John and Holly live";
+      String m = "happily ever after until their next adventure...";
+      
+    
+      
+      
       fill(0);
-      text(v,820,400);
+      text(v, 840, 400);
+      text(o,605,420);
+      text(t,410,600);
+      fill(#05E8FF);
+      text(l,x,350);
+      text(k,x,365);
+      text(m,x,380);
       loop+=1;
     }
   }

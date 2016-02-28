@@ -44,5 +44,12 @@ class DHRobot {
     rect(xAnchor + 400*horizontalScale, yAnchor + 225*verticalScale, 105*horizontalScale, 50*verticalScale);
     fill(0);
     fill(0);
+    //put LAPD on the chest
+    String a = "L A";
+    String b = "P D";
+    textSize(50);
+   fill(#0A17F5);
+    text(a,xAnchor+210*horizontalScale, yAnchor+275*verticalScale);
+    text(b,xAnchor+210*horizontalScale, yAnchor+360*verticalScale);
   }
 }
