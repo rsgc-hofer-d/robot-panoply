@@ -21,10 +21,27 @@ void draw() {
   NTRobot  nickbot  = new NTRobot();
   TMRobots timbot  = new TMRobots();
   EPRobot2 ebot = new EPRobot2();
+  SCRobot spenbot = new SCRobot();
 
 
   //start of scene 1
   if (scene==1) {
+    //make a chair
+    fill(#815901);
+   
+    rect(600,590,15,110);
+    rect(600,590,100,15);
+    rect(700,480,15,220);
+    //create windows using a loop
+    int window = 0;
+    while (window<3) {
+      fill(128, 128, 128, 128);
+      rect(100+300*window, 100, 200, 200);
+      fill(0);
+      rect(198+300*window, 100, 4, 200);
+      rect(100+300*window, 198, 200, 4);
+      window +=1;
+    }
     int x = 50;
     //all the text strings for this scene
     String s = "John meets his wife in the Nakatomi tower. He hasn't seen his wife ever since they moved apart from eachother, because of work." ;
@@ -36,7 +53,8 @@ void draw() {
     text(r, 100, 120-x);
     //loop 5 times
     int counter = 0;
-    while (counter<4) {
+
+    while (counter<4) { 
       //draw the robot
       print(50+100*counter);
       fill(255);
@@ -55,7 +73,7 @@ void draw() {
       timbot.drawAt(100, 450, 1, 1);
       //draw johns wife
       ethanbot.drawAt(250, 375, .65, .65);
-      fill(100);
+      fill(#1A0093);
       jamiebot.drawAt(25, 100, 1, 1);
       counter +=1;
     }
@@ -68,6 +86,7 @@ void draw() {
     timbot.drawAt(800, 300, 1, 1);
     adambot.drawAt(30, 30, .5, .5);
     benbot.drawAt(-30, 450, .3, .3);
+
 
     //draw the textboxes
     fill(255);
