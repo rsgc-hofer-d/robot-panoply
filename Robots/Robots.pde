@@ -1,16 +1,21 @@
+// global variables
 int scene = 1;
 
+// runs once
 void setup() {
-
 
   //create the canvas
   size(1000, 700);
+  
 }
+
+// runs repeatedly
 void draw() {
 
+  // clear the background
   background(60);
 
-  //make all of the classes into usuable robots
+  // make all of the classes into usuable robots
   ASPRobot adambot = new ASPRobot();
   BDRobot benbot = new BDRobot();
   DDRobot dariusbot = new DDRobot();
@@ -22,10 +27,11 @@ void draw() {
   TMRobots timbot  = new TMRobots();
   EPRobot2 ebot = new EPRobot2();
 
-
   //start of scene 1
-  if (scene==1) {
+  if (scene == 1) {
+  
     int x = 50;
+    
     //all the text strings for this scene
     String s = "John meets his wife in the Nakatomi tower. He hasn't seen his wife ever since they moved apart from eachother, because of work." ;
     String r = "It is christmas time and there is a small party in the Nakatomi tower. John McClane has no idea what is in store for him!";
@@ -34,9 +40,11 @@ void draw() {
     fill(#05E8FF);
     text(s, 100, 100-x);
     text(r, 100, 120-x);
-    //loop 5 times
+    
+    //loop 5 times (what is the purpose of this loop? describe intent; assume the reader can read code -- Mr. G)
     int counter = 0;
     while (counter<4) {
+    
       //draw the robot
       print(50+100*counter);
       fill(255);
@@ -59,10 +67,10 @@ void draw() {
       jamiebot.drawAt(25, 100, 1, 1);
       counter +=1;
     }
-  }
-  //start of scene 2
-  if (scene==2) {
-    //draw all the  charachters in order: Gruber, Holly, John, Karl, Citizens
+    
+  } else if (scene == 2) { //start of scene 2  (it is better to connect the conditional statement with an 'else if' for efficiency)
+  
+    //draw all the  characters in order: Gruber, Holly, John, Karl, Citizens
     kernbot.drawAt(0, 385, .75, .75);
     ethanbot.drawAt(250, 425, .5, .5);
     timbot.drawAt(800, 300, 1, 1);
@@ -74,7 +82,6 @@ void draw() {
     ellipse(350, 60, 280, 100);
     ellipse(200, 400, 200, 60);
     ellipse(750, 200, 200, 50);
-
 
     //the text
     String k = "You killed my brother! I will avenge him!";
@@ -90,14 +97,14 @@ void draw() {
     text(p, 525, 650);
     text(q, 525, 670);
 
-
     //create a wall between john and the rest of the people in the scene showing how john is somewhere else in the building
     fill(255);
     rect(500, 0, 10, 700);
-  }
-  //start of scene 3
-  if (scene == 3) {
+    
+  } else if (scene == 3) { //start of scene 3
+  
     int loop = 0;
+    
     //use int x to move the all 3 lines of text to summarize the scene
     int x= 5;
     while (loop<3) {
@@ -133,7 +140,10 @@ void draw() {
       loop+=1;
     }
   }
+  
 }
+
+// runs when a key is pressed
 void keyPressed() {
   scene+=1;
 }
