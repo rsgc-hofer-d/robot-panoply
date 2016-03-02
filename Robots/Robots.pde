@@ -28,14 +28,15 @@ void draw() {
   if (scene==1) {
     //make a chair
     fill(#815901);
-   
-    rect(600,590,15,110);
-    rect(600,590,100,15);
-    rect(700,480,15,220);
+    stroke(#815901);
+    rect(600, 590, 15, 110);
+    rect(600, 590, 100, 15);
+    rect(700, 480, 15, 220);
+    stroke(0);
     //create windows using a loop
     int window = 0;
     while (window<3) {
-      fill(128, 128, 128, 128);
+      fill(#0D015D);
       rect(100+300*window, 100, 200, 200);
       fill(0);
       rect(198+300*window, 100, 4, 200);
@@ -73,46 +74,77 @@ void draw() {
       timbot.drawAt(100, 450, 1, 1);
       //draw johns wife
       ethanbot.drawAt(250, 375, .65, .65);
-      fill(#1A0093);
+      fill(120);
       jamiebot.drawAt(25, 100, 1, 1);
       counter +=1;
     }
   }
   //start of scene 2
   if (scene==2) {
-    //draw all the  charachters in order: Gruber, Holly, John, Karl, Citizens
-    kernbot.drawAt(0, 385, .75, .75);
-    ethanbot.drawAt(250, 425, .5, .5);
+    //create a ladder for background
+int ladder=0;
+while(ladder<14){
+  fill(120);
+  stroke(255);
+    rect(800,75,20,600);
+    rect(950,75,20,600);
+  rect(800,100+50*ladder,150,20);
+  //create a big window
+  fill(#0D015D);
+  stroke(0);
+  strokeWeight(5);
+  rect(100,140,400,200);
+  fill(0);
+  rect(300,140,10,200);
+rect(100,240,400,10);
+
+
+
+
+
+//to move holly and haz at the same time
+    int x = -100;
+    //draw all the  charachters in order: Gruber, Holly, John, Karl, 
+    kernbot.drawAt(0+x, 385, .75, .75);
+    ethanbot.drawAt(250+x, 425, .5, .5);
     timbot.drawAt(800, 300, 1, 1);
-    adambot.drawAt(30, 30, .5, .5);
-    benbot.drawAt(-30, 450, .3, .3);
+    adambot.drawAt(335, 399, .5, .5);
 
 
-    //draw the textboxes
+
+
+    //draw the textboxes in order karl, hanz, john
     fill(255);
-    ellipse(350, 60, 280, 100);
-    ellipse(200, 400, 200, 60);
-    ellipse(750, 200, 200, 50);
+    ellipse(500, 360, 280, 100);
+    ellipse(210+x, 400, 200, 60);
+    ellipse(775, 260, 200, 50);
 
 
     //the text
+    //karls text
     String k = "You killed my brother! I will avenge him!";
     fill(0);
-    text(k, 240, 60);
+    text(k, 385, 363);
+    //hanz grubers text
     String w = "I have you wife Mr.McClane";
-    text(w, 125, 400);
+    text(w, 125+x, 400);
+    // john mclaines text
     String b ="I'll get you Hanz!!!";
-    text(b, 700, 210);
-    String p = "The terrorists have attacked the building John is the only man not captured.";
-    String q = "He will do whatever it takes to get his wife back!";
+    text(b, 720, 270);
+    //summary text
+    String p = "The terrorists have attacked the building John is the only man ";
+    String q = "not captured. He will do whatever it takes to get his wife back!";
     fill(#05E8FF);
-    text(p, 525, 650);
-    text(q, 525, 670);
+   
+    text(p, 50, 50);
+    text(q, 50, 70);
 
 
     //create a wall between john and the rest of the people in the scene showing how john is somewhere else in the building
     fill(255);
-    rect(500, 0, 10, 700);
+    rect(650, 0, 10, 700);
+    ladder+=1;
+  }
   }
   //start of scene 3
   if (scene == 3) {
