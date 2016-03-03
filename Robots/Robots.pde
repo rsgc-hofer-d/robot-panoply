@@ -1,4 +1,4 @@
-int scene = 1;
+int scene = 0;
 
 void setup() {
 
@@ -24,8 +24,17 @@ void draw() {
   SCRobot spenbot = new SCRobot();
 
 
+  //title page aka scene 0
+  if (scene==0) {
+    textSize(100);
+    fill(0);
+    String title = "Die Hard";
+    text(title, 283, 370);
+  }
   //start of scene 1
   if (scene==1) {
+    //resets text size
+    textSize(12);
     //make a chair
     fill(#815901);
     stroke(#815901);
@@ -82,72 +91,88 @@ void draw() {
   //start of scene 2
   if (scene==2) {
     //create a ladder for background
-int ladder=0;
-while(ladder<14){
-  fill(120);
-  stroke(255);
-    rect(800,75,20,600);
-    rect(950,75,20,600);
-  rect(800,100+50*ladder,150,20);
-  //create a big window
-  fill(#0D015D);
-  stroke(0);
-  strokeWeight(5);
-  rect(100,140,400,200);
-  fill(0);
-  rect(300,140,10,200);
-rect(100,240,400,10);
+    int ladder=0;
+    while (ladder<14) {
+      fill(120);
+      stroke(255);
+      rect(800, 75, 20, 600);
+      rect(950, 75, 20, 600);
+      rect(800, 100+50*ladder, 150, 20);
+      //create a big window
+      fill(#0D015D);
+      stroke(0);
+      strokeWeight(5);
+      rect(100, 140, 400, 200);
+      fill(0);
+      rect(300, 140, 10, 200);
+      rect(100, 240, 400, 10);
 
 
 
 
 
-//to move holly and haz at the same time
-    int x = -100;
-    //draw all the  charachters in order: Gruber, Holly, John, Karl, 
-    kernbot.drawAt(0+x, 385, .75, .75);
-    ethanbot.drawAt(250+x, 425, .5, .5);
-    timbot.drawAt(800, 300, 1, 1);
-    adambot.drawAt(335, 399, .5, .5);
+      //to move holly and haz at the same time
+      int x = -100;
+      //draw all the  charachters in order: Gruber, Holly, John, Karl, 
+      kernbot.drawAt(0+x, 385, .75, .75);
+      ethanbot.drawAt(250+x, 425, .5, .5);
+      timbot.drawAt(800, 300, 1, 1);
+      adambot.drawAt(335, 399, .5, .5);
 
 
 
 
-    //draw the textboxes in order karl, hanz, john
-    fill(255);
-    ellipse(500, 360, 280, 100);
-    ellipse(210+x, 400, 200, 60);
-    ellipse(775, 260, 200, 50);
+      //draw the textboxes in order karl, hanz, john
+      fill(255);
+      ellipse(500, 360, 280, 100);
+      ellipse(210+x, 400, 200, 60);
+      ellipse(775, 260, 200, 50);
 
 
-    //the text
-    //karls text
-    String k = "You killed my brother! I will avenge him!";
-    fill(0);
-    text(k, 385, 363);
-    //hanz grubers text
-    String w = "I have you wife Mr.McClane";
-    text(w, 125+x, 400);
-    // john mclaines text
-    String b ="I'll get you Hanz!!!";
-    text(b, 720, 270);
-    //summary text
-    String p = "The terrorists have attacked the building John is the only man ";
-    String q = "not captured. He will do whatever it takes to get his wife back!";
-    fill(#05E8FF);
-   
-    text(p, 50, 50);
-    text(q, 50, 70);
+      //the text
+      //karls text
+      String k = "You killed my brother! I will avenge him!";
+      fill(0);
+      text(k, 385, 363);
+      //hanz grubers text
+      String w = "I have you wife Mr.McClane";
+      text(w, 125+x, 400);
+      // john mclaines text
+      String b ="I'll get you Hanz!!!";
+      text(b, 720, 270);
+      //summary text
+      String p = "The terrorists have attacked the building John is the only man ";
+      String q = "not captured. He will do whatever it takes to get his wife back!";
+      fill(#05E8FF);
+
+      text(p, 50, 50);
+      text(q, 50, 70);
 
 
-    //create a wall between john and the rest of the people in the scene showing how john is somewhere else in the building
-    fill(255);
-    rect(650, 0, 10, 700);
-    ladder+=1;
-  }
+      //create a wall between john and the rest of the people in the scene showing how john is somewhere else in the building
+      fill(255);
+      rect(650, 0, 10, 700);
+      ladder+=1;
+    }
   }
   //start of scene 3
   if (scene == 3) {
+    String police = "POLICE";
+    //police car
+    fill(0);
+    rect(100, 180, 300, 70);
+    ellipse(180, 260, 70, 70);
+    ellipse(310, 260, 70, 70);
+    fill(255, 255, 255, 255);
+    rect(150, 120, 200, 60);
+    fill(#060ECE);
+    rect(210, 90, 40, 30);
+    textSize(50);
+    text(police, 180, 230);
+    fill(#FF0D1D);
+    rect(251, 90, 40, 30);
+
+
     int loop = 0;
     //use int x to move the all 3 lines of text to summarize the scene
     int x= 5;
@@ -156,8 +181,23 @@ rect(100,240,400,10);
       timbot.drawAt(800, 450, 1, 1); 
       ethanbot.drawAt(550, 450, .55, .55);
       danielbot.drawAt(100+150*loop, 450-200*loop, .5, .5);
+
       benbot.drawAt(700, 0, .5, .5);
-      benbot.drawAt(50, 0, .5, .5);
+      // int policex is used to replicate the police car and move all the x coordinates at once, same with ypolice but with y coordinates
+      int policey =150;
+      int policex = 310;
+      fill(0);
+      rect(100+policex, 180+policey, 300, 70);
+      ellipse(180+policex, 260+policey, 70, 70);
+      ellipse(310+policex, 260+policey, 70, 70);
+      fill(255, 255, 255, 255);
+      rect(150+policex, 120+policey, 200, 60);
+      fill(#060ECE);
+      rect(210+policex, 90+policey, 40, 30);
+      textSize(50);
+      text(police, 180+policex, 230+policey);
+      fill(#FF0D1D);
+      rect(251+policex, 90+policey, 40, 30);
       //draw the text bubbles, for johns , johns wife and the police
       fill(255);
       ellipse(900, 400, 200, 70);
