@@ -26,11 +26,16 @@ void draw() {
 
   //title page aka scene 0
   if (scene==0) {
+    textAlign(CENTER);
     textSize(100);
     fill(0);
     String title = "Die Hard";
-    text(title, 283, 370);
+    text(title, 500, 350);
+    textSize(50);
+    String author = "By: Daniel Hofer";
+    text(author,500,500);
   }
+  textAlign(LEFT);
   //start of scene 1
   if (scene==1) {
     //resets text size
@@ -224,6 +229,10 @@ void draw() {
       loop+=1;
     }
   }
+  if (frameCount%180==0){
+    scene+=1;
+  }
+  saveFrame("export-####.png");
 }
 void keyPressed() {
   scene+=1;
